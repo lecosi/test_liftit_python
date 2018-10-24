@@ -28,6 +28,7 @@ class UserList(generics.ListCreateAPIView):
 def index(request):
     return render(request, 'base/base.html', {})
 
+
 class BrandList(APIView):
     def get(self, request):
         brands = Brand.objects.all()
