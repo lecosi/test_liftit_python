@@ -1,0 +1,92 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <form method="POST" action="/create-vehicle/">
+        {% csrf_token %}
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="form-group">
+                        <label>Placa</label>
+                        {{ form.vehicle_plate }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="form-group">
+                        <label>Tipo de vehiculo</label>
+                        {{ form.vehicle_type }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="form-group">
+                        <label>Marca</label>
+                        {{ form.brand }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="form-group">
+                        <label>Propietario</label>
+                        {{ form.owner }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="form-group">
+                        <button type="submit">Guardar</button>
+                    </div>
+                </div>
+            </div>
+    </form>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}
+
+{#{% block content %}#}
+{#<form method="POST">#}
+{#    {% csrf_token %}#}
+{#    <div class="row">#}
+{#        <div class="col-md-8 col-md-offset-2">#}
+{#            <div class="form-group">#}
+{#                <label>Placa</label>#}
+{#                <input class="form-control" type="text" name="vehicle_plate">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="col-md-8 col-md-offset-2">#}
+{#            <div class="form-group">#}
+{#                <label>Tipo de vehiculo</label>#}
+{#                <input class="form-control" type="text" name="vehicle_type">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="col-md-8 col-md-offset-2">#}
+{#            <div class="form-group">#}
+{#                <label>Marca</label>#}
+{#                <input class="form-control" type="text" name="brand">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="col-md-8 col-md-offset-2">#}
+{#            <div class="form-group">#}
+{#                <label>Email</label>#}
+{#                <input class="form-control" type="email" name="email">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#</form>#}
+{#{% endblock %}#}

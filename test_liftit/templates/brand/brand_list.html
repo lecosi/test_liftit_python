@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Vehicle list</title>
+
+	<link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+	<div id="main-container">
+
+		<table>
+			<thead>
+				<tr>
+					<th>Marca</th><th>Cantidad de vehiculos</th>
+				</tr>
+			</thead>
+            {%for item in brand%}
+            <tr>
+				<td align="center">{{item.name}}</td><td align="center">{{item.count_vehicles}}</td>
+			</tr>
+            {% empty %}
+            <li>No hay vehiculos registrados</li>
+            {% endfor %}
+
+		</table>
+	</div>
+</body>
+</html>
